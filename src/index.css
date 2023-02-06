@@ -45,3 +45,44 @@ body {
   left: 2%;
   text-decoration: none;
 }
+
+/* INPUT STYLES */
+
+.inputStyle {
+  border: 1px solid #BCBCBC;
+  background-color: #fff;
+  text-indent: 10px;
+  font-size: 20px;
+  height: 50px;
+  width: 100%;
+  border-radius: 5px;
+  font-family: 'HelveticaNeue';
+
+}
+
+.inputStyle:focus {
+  outline: none;
+}
+
+
+textarea {
+  margin-top: 10px;
+  border: 1px solid #BCBCBC;
+  border-radius: 5px;
+  height: 200px;
+  font-size: 1.2rem;
+  resize: none;
+  font-family: 'HelveticaNeue';
+  text-indent: 10px;
+}
+
+textarea:focus {
+  outline: none;
+  resize: none;
+}
+
+
+label {
+  font-weight: bold;
+  font-size: 1.6rem;
+}

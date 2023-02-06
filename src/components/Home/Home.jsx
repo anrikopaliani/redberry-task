@@ -16,9 +16,9 @@ const Home = () => {
         <div></div>
       </nav>
       <div className={styles.buttonContainer}>
-        {/* <Link style={{ textDecoration: "none", color: "#fff" }} to="/1"> */}
-        <button>ᲠᲔᲖᲘᲣᲛᲔᲡ ᲓᲐᲛᲐᲢᲔᲑᲐ</button>
-        {/* </Link> */}
+        <Link style={{ textDecoration: "none", color: "#fff" }} to="/1">
+          <button>ᲠᲔᲖᲘᲣᲛᲔᲡ ᲓᲐᲛᲐᲢᲔᲑᲐ</button>
+        </Link>
       </div>
       <img src={agencyLogo} alt="agency logo" className={styles.agencyLogo} />
     </div>

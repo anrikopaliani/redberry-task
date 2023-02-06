@@ -1,0 +1,51 @@
+.container {
+    width: 72%;
+}
+
+.name_surname {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.name_surname_input {
+    width: 45%;
+}
+
+.image_container {
+    padding-top: 20px;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image_container label {
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.uploadImageButton {
+    background: #0E80BF;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #fff;
+    line-height: 17px;
+    font-size: 1rem;
+    border: none;
+}
+
+.uploadImageButton:hover {
+    cursor: pointer;
+}
+
+.textarea_container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.email_container, .phone_number_container {
+    padding-top: 20px;
+}
