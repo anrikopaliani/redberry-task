@@ -1,0 +1,62 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../images/homepageImage.jpg");
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar {
+    padding-top: 2rem;
+    width: 90%;
+}
+
+.navbar div {
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    margin-top: 2rem;
+}
+
+.redberryLogo {
+    z-index: 3333;
+}
+
+.buttonContainer {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+.buttonContainer button {
+    background-color: #1A1A1A;
+    color: #fff;
+    width: 400px;
+    height: 60px;
+    font-size: 1.5rem;
+    font-family: 'HelveticaNeue';
+    border-radius: 8px;
+   
+    text-decoration: none;
+}
+
+.buttonContainer button:hover {
+    cursor: pointer;
+}
+
+
+.agencyLogo {
+    position: absolute;
+    left: 27%;
+    right: 0;
+    top: 25%;
+    bottom: 0;
+    margin: auto;
+}
+
+
+
