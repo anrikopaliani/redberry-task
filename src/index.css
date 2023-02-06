@@ -85,4 +85,10 @@ textarea:focus {
 label {
   font-weight: bold;
   font-size: 1.6rem;
+  padding-bottom: 10px;
+}
+
+.resume {
+  width: 45%;
+  height: 100vh;
 }

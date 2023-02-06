@@ -1,8 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import Input from "../../input/Input";
 import styles from "./PersonalForm.module.css";
+import { useNavigate } from "react-router-dom";
 import { convertToBase64 } from "./convertToBase64";
 import { validate } from "./validate";
+
+import errorLogo from "../../../images/errorSign.png";
+import correctLogo from "../../../images/correct-logo.png";
 
 const PersonalForm = ({ formValues, setFormValues }) => {
   const [formErrors, setFormErrors] = useState(
@@ -14,6 +18,8 @@ const PersonalForm = ({ formValues, setFormValues }) => {
       email: null,
     }
   );
+  const [touched, setTouched] = useState(false);
+  const navigate = useNavigate();
   const fileInputRef = useRef();
 
   const handleChange = (e) => {
@@ -27,7 +33,24 @@ const PersonalForm = ({ formValues, setFormValues }) => {
     const { name } = e.target;
     const image = e.target.files[0];
     const base64 = await convertToBase64(image);
+    console.log(image);
+    const validatedImage = validate(name, base64);
+
     setFormValues({ ...formValues, [name]: base64 });
+    setFormErrors({ ...formErrors, ...validatedImage });
+  };
+
+  const handleTextareaChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+  };
+
+  const handleUploadImageButton = () => {
+    fileInputRef.current.click();
+    // setFormErrors({ ...formErrors, image:  true});
+    if (!fileInputRef.current.files[0]) {
+      setFormErrors({ ...formErrors, image: true });
+    }
   };
 
   useEffect(() => {
@@ -38,8 +61,21 @@ const PersonalForm = ({ formValues, setFormValues }) => {
     window.localStorage.setItem("errors", JSON.stringify(formErrors));
   }, [formErrors]);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // check if every there are errors or not
+    const errorsArray = Object.values(formErrors).every(
+      (value) => value === false
+    );
+
+    if (Object.keys(formErrors).length >= 5 && errorsArray) {
+      // navite to next page
+      navigate("/2");
+    }
+  };
+
   return (
-    <form className={styles.container}>
+    <form className={styles.container} onSubmit={handleSubmit}>
       <section className={styles.name_surname}>
         <div className={styles.name_surname_input}>
           <Input
@@ -77,14 +113,22 @@ const PersonalForm = ({ formValues, setFormValues }) => {
           onChange={handleImageChange}
         />
         <button
-          onClick={() => {
-            fileInputRef.current.click();
-          }}
+          onClick={handleUploadImageButton}
           type="button"
           className={styles.uploadImageButton}
         >
           ატვირთვა
         </button>
+        {formErrors.image === false && (
+          <img
+            src={correctLogo}
+            alt="correct"
+            className={styles.error_correct}
+          />
+        )}
+        {formErrors.image && (
+          <img src={errorLogo} alt="error" className={styles.error_correct} />
+        )}
       </section>
 
       <section className={styles.textarea_container}>
@@ -93,6 +137,8 @@ const PersonalForm = ({ formValues, setFormValues }) => {
           name="about_me"
           id="about_me"
           placeholder="ზოგადი ინფო შენ შესახებ"
+          onChange={handleTextareaChange}
+          value={formValues.about_me}
         ></textarea>
       </section>
 
@@ -119,6 +165,10 @@ const PersonalForm = ({ formValues, setFormValues }) => {
           error={formErrors.phone_number}
         />
       </section>
+
+      <button className={styles.submit} type="submit">
+        ᲨᲔᲛᲓᲔᲒᲘ
+      </button>
     </form>
   );
 };

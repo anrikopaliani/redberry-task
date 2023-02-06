@@ -1,0 +1,45 @@
+.resume_header_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.name, .about_me {
+    color: #F93B1D;
+}
+
+.name {
+    font-weight: 700;
+    font-size: 34px;
+}
+
+.img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.credentials_container {
+    padding-top: 20px;
+}
+
+.credentials {
+    display: flex;
+    align-items: center;
+}
+
+.credentials span {
+    font-size: 25px;
+    padding-left: 10px;
+}
+
+.about_me_container {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.about_me_container span {
+    font-size: 22px;
+}

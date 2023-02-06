@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FormHeader from "../FormHeader/FormHeader";
+import Resume from "../resume/Resume";
 import PersonalForm from "./Form/PersonalForm";
 
 const Personal = () => {
@@ -15,13 +16,14 @@ const Personal = () => {
   );
   return (
     <div className="form_container">
-      {/* THIS DIV IS FOR FORM AND FORM HEADER */}
       <div className="form">
         <FormHeader title="პირადი ინფო" pageNumber={1} />
         <PersonalForm formValues={formValues} setFormValues={setFormValues} />
       </div>
-      {/* THIS DIV IS FOR RESUME PAGE */}
-      <div></div>
+
+      <div className="resume">
+        <Resume formValues={formValues} />
+      </div>
     </div>
   );
 };

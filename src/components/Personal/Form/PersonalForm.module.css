@@ -14,6 +14,7 @@
 }
 
 .image_container {
+    position: relative;
     padding-top: 20px;
     width: 60%;
     display: flex;
@@ -48,4 +49,23 @@
 
 .email_container, .phone_number_container {
     padding-top: 20px;
+}
+
+
+.error_correct {
+    position: absolute;
+    right: -30px;
+    width: 25px;
+    height: 25px;
+}
+
+
+.submit {
+    color: #fff;
+    border: none;
+    background-color: #6B40E3;
+    padding: 18px 60px;
+    font-size: 18px;
+    float: right;
+    margin-top: 20px;
 }

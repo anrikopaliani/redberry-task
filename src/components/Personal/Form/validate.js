@@ -2,7 +2,7 @@ export const validate = (name, value) => {
   let errors = {};
   const REGEX = /^[ა-ჰ]+$/;
   const EMAIL_REGEX = /^[a-zA-Z0-9.]+@redberry.ge\s{0,}/;
-  const PHONE_NUMBER_REGEX = /\+995\s\d{3}\s\d{2}\s\d{2}\s\d{2}/;
+  const PHONE_NUMBER_REGEX = /\+995\s\d{3}\s\d{2}\s\d{2}\s\d{2}\s{0,}$/;
 
   if (name === "name" || name === "surname") {
     if (!value || value.length < 2 || !REGEX.test(value)) {
