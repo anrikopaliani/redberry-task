@@ -42,4 +42,5 @@
 
 .about_me_container span {
     font-size: 22px;
+    word-wrap: break-word;
 }

@@ -3,22 +3,20 @@ import Input from "../../input/Input";
 import styles from "./PersonalForm.module.css";
 import { useNavigate } from "react-router-dom";
 import { convertToBase64 } from "./convertToBase64";
-import { validate } from "./validate";
+import { validate, validateOnSubmit } from "./validate";
 
 import errorLogo from "../../../images/errorSign.png";
 import correctLogo from "../../../images/correct-logo.png";
 
 const PersonalForm = ({ formValues, setFormValues }) => {
-  const [formErrors, setFormErrors] = useState(
-    JSON.parse(window.localStorage.getItem("errors")) || {
-      name: null,
-      surname: null,
-      image: null,
-      phone_number: null,
-      email: null,
-    }
-  );
-  const [touched, setTouched] = useState(false);
+  const [formErrors, setFormErrors] = useState({
+    name: null,
+    surname: null,
+    image: null,
+    phone_number: null,
+    email: null,
+  });
+
   const navigate = useNavigate();
   const fileInputRef = useRef();
 
@@ -47,9 +45,9 @@ const PersonalForm = ({ formValues, setFormValues }) => {
 
   const handleUploadImageButton = () => {
     fileInputRef.current.click();
-    // setFormErrors({ ...formErrors, image:  true});
     if (!fileInputRef.current.files[0]) {
       setFormErrors({ ...formErrors, image: true });
+      setFormValues({ ...formValues, image: "" });
     }
   };
 
@@ -57,19 +55,21 @@ const PersonalForm = ({ formValues, setFormValues }) => {
     window.localStorage.setItem("form", JSON.stringify(formValues));
   }, [formValues]);
 
-  useEffect(() => {
-    window.localStorage.setItem("errors", JSON.stringify(formErrors));
-  }, [formErrors]);
+  // useEffect(() => {
+  //   window.localStorage.setItem("errors", JSON.stringify(formErrors));
+  // }, [formErrors]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const validateForm = validateOnSubmit(formValues);
+    setFormErrors({ ...validateForm });
     // check if every there are errors or not
-    const errorsArray = Object.values(formErrors).every(
+    const errorsArray = Object.values(validateForm).every(
       (value) => value === false
     );
 
-    if (Object.keys(formErrors).length >= 5 && errorsArray) {
-      // navite to next page
+    if (Object.values(formErrors).length >= 5 && errorsArray) {
+      // navigate to next page
       navigate("/2");
     }
   };

@@ -3,17 +3,7 @@ import FormHeader from "../FormHeader/FormHeader";
 import Resume from "../resume/Resume";
 import PersonalForm from "./Form/PersonalForm";
 
-const Personal = () => {
-  const [formValues, setFormValues] = useState(
-    JSON.parse(window.localStorage.getItem("form")) || {
-      name: "",
-      surname: "",
-      email: "",
-      phone_number: "",
-      image: "",
-      about_me: "",
-    }
-  );
+const Personal = ({ setFormValues, formValues }) => {
   return (
     <div className="form_container">
       <div className="form">

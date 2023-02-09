@@ -1,12 +1,13 @@
 .input_container {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
-/* .input_container label {
-    font-weight: bold;
-    font-size: 1.5rem;
-} */
+.input_container label {
+    padding-top: 20px;
+}
+
 
 .input_container span {
     font-weight: 300;
