@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Education from "./components/Education/Education";
 import Experience from "./components/Experience/Experience";
 import Home from "./components/Home/Home";
 import Personal from "./components/Personal/Personal";
@@ -38,6 +39,12 @@ function App() {
           path="/2"
           element={
             <Experience formValues={formValues} setFormValues={setFormValues} />
+          }
+        />
+        <Route
+          path="/3"
+          element={
+            <Education formValues={formValues} setFormValues={setFormValues} />
           }
         />
       </Routes>

@@ -76,7 +76,7 @@ const Experience = ({ formValues, setFormValues }) => {
       }
 
       if (count === experiences.length) {
-        navigate("/1");
+        navigate("/3");
       }
     }
 
@@ -91,7 +91,7 @@ const Experience = ({ formValues, setFormValues }) => {
       }
 
       if (count === experiences.length - 1) {
-        navigate("/1");
+        navigate("/3");
       }
     }
   };
