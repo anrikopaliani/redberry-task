@@ -39,13 +39,13 @@ export const validateOnSubmit = (experiences) => {
   });
 
   experiences.forEach((object, index) => {
-    if (!object.position || object.position.replace(/\s/g, "").length < 2) {
+    if (!object.position || object.position.replaceAll(" ", "").length < 2) {
       errors[index].position = true;
     } else {
       errors[index].position = false;
     }
 
-    if (!object.employer || object.employer.replace(/\s/g, "").length < 2) {
+    if (!object.employer || object.employer.replaceAll(" ", "").length < 2) {
       errors[index].employer = true;
     } else {
       errors[index].employer = false;

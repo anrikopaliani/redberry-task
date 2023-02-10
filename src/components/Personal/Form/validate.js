@@ -5,7 +5,7 @@ export const validate = (name, value) => {
   const PHONE_NUMBER_REGEX = /\+995\s\d{3}\s\d{2}\s\d{2}\s\d{2}\s{0,}$/;
 
   if (name === "name" || name === "surname") {
-    if (!value || value.length.replace(/\s/g, "") < 2 || !REGEX.test(value)) {
+    if (!value || value.replaceAll(" ", "").length < 2 || !REGEX.test(value)) {
       errors[name] = true;
     } else {
       errors[name] = false;
@@ -47,7 +47,7 @@ export const validateOnSubmit = (values) => {
 
   if (
     !values.name ||
-    values.name.length.replace(/\s/g, "") < 2 ||
+    values.name.replaceAll(" ", "").length < 2 ||
     !REGEX.test(values.name)
   ) {
     errors.name = true;
@@ -57,7 +57,7 @@ export const validateOnSubmit = (values) => {
 
   if (
     !values.surname ||
-    values.surname.replace(/\s/g, "").length < 2 ||
+    values.surname.replaceAll(" ", "").length < 2 ||
     !REGEX.test(values.surname)
   ) {
     errors.surname = true;
