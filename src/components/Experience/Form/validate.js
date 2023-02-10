@@ -1,7 +1,7 @@
 export const validate = (name, value) => {
   let errors = {};
   if (name === "position" || name === "employer") {
-    if (!value || value.length < 2) {
+    if (!value || value.replace(/\s/g, "").length < 2) {
       errors[name] = true;
     } else {
       errors[name] = false;
@@ -39,13 +39,13 @@ export const validateOnSubmit = (experiences) => {
   });
 
   experiences.forEach((object, index) => {
-    if (!object.position || object.position.length < 2) {
+    if (!object.position || object.position.replace(/\s/g, "").length < 2) {
       errors[index].position = true;
     } else {
       errors[index].position = false;
     }
 
-    if (!object.employer || object.employer.length < 2) {
+    if (!object.employer || object.employer.replace(/\s/g, "").length < 2) {
       errors[index].employer = true;
     } else {
       errors[index].employer = false;
