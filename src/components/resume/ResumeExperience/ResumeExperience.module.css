@@ -7,6 +7,7 @@
 
 .resume_experience_container {
     margin-top: 30px;
+    
 }
 
 .resume_experience_container h2{
@@ -32,4 +33,5 @@
     width: 100%;
     font-size: 20px;
     word-wrap: break-word;
+    font-family: "HelveticaNeue";
 }

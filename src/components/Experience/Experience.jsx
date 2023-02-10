@@ -58,7 +58,7 @@ const Experience = ({ formValues, setFormValues }) => {
     // if there is only one form, check if there are errors or not
     // if there are no errors navigate to the next page
     if (experiences.length === 1 && firstObjectErrors) {
-      navigate("/1");
+      navigate("/3");
     }
 
     if (experiences.length > 1) {

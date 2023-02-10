@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Input from "../../input/Input";
 import styles from "./ExperienceForm.module.css";
 import { validate } from "./validate";
-import correctLogo from "../../../images/correct-logo.png";
 import errorLogo from "../../../images/errorSign.png";
 
 // objectIndex is for identyifying which values to change in experiences array
@@ -22,10 +21,10 @@ const ExperienceForm = ({
       objValue = value.replaceAll("-", "/");
     }
 
-    const obj = formValues.experiences.map((object, index) =>
+    const newExperiences = formValues.experiences.map((object, index) =>
       index === objectIndex ? { ...object, [name]: objValue } : object
     );
-    setFormValues({ ...formValues, experiences: obj });
+    setFormValues({ ...formValues, experiences: newExperiences });
     const validatedField = validate(name, value);
     setFormErrors(
       formErrors.map((errorObject, index) =>

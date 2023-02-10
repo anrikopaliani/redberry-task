@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./ResumeExperience.module.css";
 
 const ResumeExperience = ({ experiences }) => {
-  if (Object.values(experiences[0]).some((obj) => obj.value !== "")) {
+  if (Object.values(experiences[0]).some((value) => value !== "")) {
     return (
       <>
         <div className={styles.line}></div>
