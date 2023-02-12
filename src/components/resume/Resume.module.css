@@ -1,3 +1,12 @@
 .resume_container {
     padding: 50px 100px;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.image {
+    width: 42px;
+    height: 42px;
 }

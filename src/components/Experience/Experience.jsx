@@ -74,7 +74,7 @@ const Experience = ({ formValues, setFormValues }) => {
           count++;
         }
       }
-
+      // if all the forms are completed
       if (count === experiences.length) {
         navigate("/3");
       }
@@ -85,7 +85,12 @@ const Experience = ({ formValues, setFormValues }) => {
     if (experiences.length > 1 && firstObjectErrors) {
       let count = 0;
       for (let i = 1; i < experiences.length; i++) {
-        if (Object.values(experiences[i]).every((value) => value === "")) {
+        if (
+          Object.values(formErrors[i]).every(
+            (value) => value === false || value === null
+          ) ||
+          Object.values(experiences[i]).every((value) => value === "")
+        ) {
           count++;
         }
       }

@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Education from "./components/Education/Education";
 import Experience from "./components/Experience/Experience";
 import Home from "./components/Home/Home";
+import LastPage from "./components/LastPage/LastPage";
 import Personal from "./components/Personal/Personal";
 
 function App() {
@@ -19,6 +20,14 @@ function App() {
           position: "",
           employer: "",
           start_date: "",
+          due_date: "",
+          description: "",
+        },
+      ],
+      educations: [
+        {
+          institute: "",
+          degree_id: "",
           due_date: "",
           description: "",
         },
@@ -47,6 +56,7 @@ function App() {
             <Education formValues={formValues} setFormValues={setFormValues} />
           }
         />
+        <Route path="/4" element={<LastPage />} />
       </Routes>
     </BrowserRouter>
   );

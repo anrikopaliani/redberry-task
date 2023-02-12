@@ -2,7 +2,7 @@ export const validate = (name, value) => {
   let errors = {};
   const REGEX = /^[ა-ჰ]+\s{0,}$/;
   const EMAIL_REGEX = /^[A-Za-z0-9._%+-]+@redberry.ge\s{0,}$/;
-  const PHONE_NUMBER_REGEX = /\+995\s\d{3}\s\d{2}\s\d{2}\s\d{2}\s{0,}$/;
+  const PHONE_NUMBER_REGEX = /\+995\s?\d{3}\s?\d{2}\s?\d{2}\s?\d{2}\s{0,}$/;
 
   if (name === "name" || name === "surname") {
     if (!value || value.replaceAll(" ", "").length < 2 || !REGEX.test(value)) {
@@ -43,7 +43,7 @@ export const validateOnSubmit = (values) => {
   let errors = {};
   const REGEX = /^[ა-ჰ]+$/;
   const EMAIL_REGEX = /^[A-Za-z0-9._%+-]+@redberry.ge\s{0,}$/;
-  const PHONE_NUMBER_REGEX = /\+995\s\d{3}\s\d{2}\s\d{2}\s\d{2}\s{0,}$/;
+  const PHONE_NUMBER_REGEX = /\+995\s?\d{3}\s?\d{2}\s?\d{2}\s?\d{2}\s{0,}$/;
 
   if (
     !values.name ||

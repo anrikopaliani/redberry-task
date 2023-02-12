@@ -1,0 +1,50 @@
+.container {
+    width: 72%;
+}
+
+.degree_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+
+
+.dropdown, .date {
+    width: 45%;
+}
+
+.date {
+    position: relative;
+}
+
+.error {
+    position: absolute;
+}
+
+
+.date input {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #BCBCBC;
+    border-radius: 4px; 
+}
+.date input {
+    width: 100%;
+    height: 50px;
+}
+
+.textarea_container {
+    padding-top: 30px;
+}
+
+.textarea {
+    width: 100%;
+}
+
+
+.line {
+    background-color: #C1C1C1;
+    height: 2px;
+    margin-top: 55px;
+}

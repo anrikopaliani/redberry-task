@@ -22,6 +22,7 @@ const PersonalForm = ({ formValues, setFormValues }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setFormValues({ ...formValues, [name]: value });
     const validatedInput = validate(name, value);
     setFormErrors({ ...formErrors, ...validatedInput });
@@ -31,7 +32,6 @@ const PersonalForm = ({ formValues, setFormValues }) => {
     const { name } = e.target;
     const image = e.target.files[0];
     const base64 = await convertToBase64(image);
-    console.log(image);
     const validatedImage = validate(name, base64);
 
     setFormValues({ ...formValues, [name]: base64 });
@@ -54,10 +54,6 @@ const PersonalForm = ({ formValues, setFormValues }) => {
   useEffect(() => {
     window.localStorage.setItem("form", JSON.stringify(formValues));
   }, [formValues]);
-
-  // useEffect(() => {
-  //   window.localStorage.setItem("errors", JSON.stringify(formErrors));
-  // }, [formErrors]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

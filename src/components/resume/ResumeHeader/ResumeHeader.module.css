@@ -38,7 +38,10 @@
     padding-top: 20px;
     display: flex;
     flex-direction: column;
+    word-wrap: break-word;
+    width: 400px;
 }
+
 
 .about_me_container span {
     font-size: 22px;

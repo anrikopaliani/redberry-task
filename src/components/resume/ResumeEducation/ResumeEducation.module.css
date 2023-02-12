@@ -1,0 +1,36 @@
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: #C8C8C8;
+    margin-top: 20px;
+}
+
+.resume_education_container {
+    margin-top: 30px;
+}
+
+.resume_education_container h2 {
+    color: #F93B1D;
+}
+
+.institute {
+    padding-top: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #1A1A1A;
+}
+
+.date {
+    color: #909090;
+    font-size: 20px;
+    font-style: italic;
+    padding-top: 10px;
+}
+
+.description {
+    padding-top: 16px;
+    width: 100%;
+    font-size: 20px;
+    word-wrap: break-word;
+    font-family: "HelveticaNeue";
+}
