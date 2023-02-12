@@ -79,9 +79,7 @@ const Experience = ({ formValues, setFormValues }) => {
         navigate("/3");
       }
     }
-
-    // if there is more than one form and if only the first one is completed
-    // and there are no errors in other forms, navigate to the next page
+    // if the first form is completed check all the other forms
     if (experiences.length > 1 && firstObjectErrors) {
       let count = 0;
       for (let i = 1; i < experiences.length; i++) {

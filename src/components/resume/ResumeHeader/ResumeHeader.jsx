@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./ResumeHeader.module.css";
 
 import phoneLogo from "../../../images/phone-logo.png";
@@ -6,9 +6,7 @@ import emailLogo from "../../../images/email-logo.png";
 
 const ResumeHeader = ({ formValues }) => {
   const { image, name, surname, email, phone_number, about_me } = formValues;
-  const [profile, setProfile] = useState();
 
-  // const imageError = JSON.parse(window.localStorage.getItem("errors")).image;
   return (
     <header className={styles.resume_header_container}>
       <div>

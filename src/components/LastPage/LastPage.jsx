@@ -12,7 +12,11 @@ const LastPage = () => {
   const [showMessage, setShowMessage] = useState(true);
   // access the state which is passed down while navigating programatically
   const { state } = useLocation();
-  console.log(state);
+
+  if (!state) {
+    return null;
+  }
+
   return (
     <div className={styles.container}>
       <Link to="/" className={styles.back_btn}>
